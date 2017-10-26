@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+  <link rel=stylesheet href="/css/style.css">
+  <title>{{ user.fname }} - My Profile</title>
+</head>
+
+<body>
+
+  <div class='home-container'>
+
+    <div class='header-container'>
+      <div class='header'>
+        <div class'header-content logo-part'>
+          <a href="/home"><img id='little-logo' src="/images/little-logo.png" alt="remembook"></a>
+        </div>
+        <a href="/home" class='header-content see-all-part'>Home</a>
+        <div class='header-content user-info-part'><img id='profile-pic' src="{{ user.user_image_url }}"/></div>
+        <div class='header-content user-info-part'><a href="/user">{{ user.fname }}</a></div>
+        <div class='header-content logout-part'><a href="/user/logout" >LOG OUT</a></div>
+      </div>
+    </div>
+
+    <div class='main-content-container'>
+      <div class='main-content'>
+        <div class='body-content'>
+          <form id='user-informations-form' action="/user" method="PUT">
+            <div><img class='big-profile-pic' src="{{ user.user_image_url }}" alt=""/></div>
+            <div><h1>{{ user.fname }} {{ user.lname }}</h1></div>
+            <div>email: {{ user.email }}</div>
+            <div>username: {{ user.login }}</div>
+            <div id='user_to_delete_id' data-id='{{ user.user_id }}'></div>
+            <div><a class='user-info-link' href='/user/edit'>Edit these informations</a></div>
+            <div><button id='delete-user-button'>Delete my account</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+ <a href="/home">Home</a>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+</body>
+
+</html>

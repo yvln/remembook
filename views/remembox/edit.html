@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+  <link rel=stylesheet href="/css/style.css">
+  <title>Edit remembox</title>
+</head>
+<body>
+
+  <div class='message-flash'>{{ message }}</div>
+
+  <div class='home-container'>
+
+    <div class='header-container'>
+      <div class='header'>
+        <div class'header-content logo-part'>
+          <a href="/home"><img id='little-logo' src="/images/little-logo.png" alt="remembook"></a>
+        </div>
+        <a href="/home/seeall" class='header-content see-all-part'>See All</a>
+        <div class='header-content user-info-part'><img id='profile-pic' src="{{ user.user_image_url }}"/></div>
+        <div class='header-content user-info-part'><a href="/user">{{ user.fname }}</a></div>
+        <div class='header-content logout-part'><a href="/user/logout" >LOG OUT</a></div>
+      </div>
+    </div>
+
+    <div class='main-content-container'>
+      <div class='main-content'>
+        <div class='body-content'>
+          <form id="edit-remembox">
+            <div><input placeholder="Date" name="rmbdate" type="date"/ value='{{ data.rmbdate }}' required></div>
+            <div><select name="category" size="1" required>
+              <option value='action' {{#isSelectedCat}}action{{/isSelectedCat}}>ACTION</option>
+              <option value='event' {{#isSelectedCat}}event{{/isSelectedCat}}>EVENT</option>
+              <option value='idea' {{#isSelectedCat}}idea{{/isSelectedCat}}>IDEA</option>
+              <option value='meeting' {{#isSelectedCat}}meeting{{/isSelectedCat}}>MEETING</option>
+              <option value='thought' {{#isSelectedCat}}thought{{/isSelectedCat}}>THOUGHT</option>
+            </select></div>
+            <div><input placeholder="Title" name="title" type="text"/ value='{{ data.title }}' required></div>
+            <div><textarea placeholder="Description" name="description" rows="5">{{ data.description }}</textarea></div>
+            <div><input placeholder="Image-url" name="image-url" type="text" value='{{ data.picture }}'/></div>
+            <div><img class='img-in-edit-rmb' src="{{ data.picture }}" alt="" /></div>
+            <div><select name="mood" size="1" required></div>
+              <option hidden selected>--What's your mood?--</option>
+              <option value='angry' {{#isSelectedMood}}angry{{/isSelectedMood}}>ANGRY</option>
+              <option value='dreamy' {{#isSelectedMood}}dreamy{{/isSelectedMood}}>DREAMY</option>
+              <option value='excited' {{#isSelectedMood}}excited{{/isSelectedMood}}>EXCITED</option>
+              <option value='happy' {{#isSelectedMood}}happy{{/isSelectedMood}}>HAPPY</option>
+              <option value='hungry' {{#isSelectedMood}}hungry{{/isSelectedMood}}>HUNGRY</option>
+              <option value='nonchalant' {{#isSelectedMood}}nonchalant{{/isSelectedMood}}>NONCHALANT</option>
+            </select>
+            <div id="remembox_id" data-id='{{ data.remembox_id }}'></div>
+            <div><input class='edit-rmb-button' type="submit" value="Edit the Remembox"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

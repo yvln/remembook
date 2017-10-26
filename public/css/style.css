@@ -1,0 +1,317 @@
+body {
+  margin: 0;
+  font-family: 'Patrick Hand', sans-serif;
+}
+
+
+/* MESSAGES FLASH */
+
+.message-flash {
+  color: #A81379;
+  bottom: 32px;
+  position: fixed;
+  left: 50%;
+  font-size: 13px;
+}
+
+/*GENERAL + INDEX PAGE*/
+
+.index-container {
+  display: flex;
+  flex-direction: column;
+}
+
+    .header-container {
+      background-color: rgb(90, 172, 252);
+      position: fixed;
+      top:0;
+      width: 100vw;
+    }
+
+    .index-container > .header-container {
+      color: black;
+    }
+
+    .home-container > .header-container {
+      color: white;
+    }
+
+        .header {
+          max-width: 1000px;
+          margin: auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+            a {
+              text-decoration: none;
+              color: white;
+            }
+
+            a:hover {
+              text-decoration: underline;
+            }
+
+            #logo {
+              width: 250px;
+            }
+
+            #login-form {
+              display: flex;
+              font-size: 13px;
+            }
+
+              .login-form-input-text-part {
+                display: flex;
+                align-items: center;
+              }
+                  label {
+                    font-size: 15px;
+                  }
+
+                  input, select, textarea {
+                    margin: 5px 8px 0 0;
+                    width: 150px;
+                  }
+
+                    #login-button {
+                      width: 45px;
+                    }
+
+    .main-content-container {
+      background-color: #EDF1F2;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
+
+        .body-content {
+          display: flex;
+          flex-direction: column;
+          padding-top: 78px;
+          margin: 0 auto;
+        }
+
+          .column-left {
+            flex: 3;
+            margin-left: 10px;
+          }
+              .article-container {
+                padding: 0 30px 0 0;
+                font-size: 12px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+              }
+                  .article {
+                    margin: 0 auto;
+                    text-align: center;
+                    line-height: 25px;
+                  }
+                  .article-title {
+                    margin-top: 30px;
+                    font-size: 18px;
+                  }
+                  .article-desc {
+                    font-size: 14px;
+                    height: auto;
+                    margin-bottom: 30px;
+                  }
+                  .article-pic {
+                    max-width: 80%;
+                    margin: 0 auto;
+                  }
+                  .article-url {
+                    text-decoration: none;
+                    color: rgb(90, 172, 252);
+                  }
+                  .article-magname {
+                    font-size: 18px;
+                    font-weight: bold;
+                  }
+                  .article-maglogo {
+                    min-width: 10px;
+                    max-width: 20px;
+                    height: auto;
+                  }
+
+          .column-right {
+            flex:2;
+            margin-right: 10px;
+          }
+
+            #signup-form {
+              display: flex;
+              flex-direction: column;
+            }
+
+                .signup-input {
+                  height: 30px;
+                  font-size: 15px;
+                  margin-top: 15px;
+                  border-radius: 3px;
+                  width: 100%;
+                  padding-left: 5px;
+                }
+
+                .signup-submit-button {
+                  margin: 0 auto;
+                  width: 100%;
+                  height: auto;
+                  margin-top: 25px;
+                  background-color: rgb(90, 172, 252);
+                  text-decoration: none;
+                  color: white;
+                  border: none;
+              }
+
+/*HOME PAGE*/
+
+#little-logo {
+  width: 25px;
+  margin: 10px;
+  border-radius: 1px;
+}
+
+.search-part {
+  width: 300px;
+}
+
+#find-button {
+  width: 50px;
+}
+
+#profile-pic {
+  width: 40px;
+  border-radius: 50%;
+}
+
+  .all-remembox {
+      display: flex;
+      background-color: white;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      flex:5;
+      min-height: 300px;
+      margin-top: -11px;
+    }
+
+        #new-remembox {
+          background-image: url("../images/rmb-background.jpg");
+          background-size: cover;
+          align-items: center;
+          width: 200px;
+          text-align: center;
+          padding: 15px 0;
+          height: 227px;
+          border-radius: 7px;
+          margin: 20px;
+        }
+
+        .remembox {
+          margin: 10px;
+          padding: 10px;
+          border-radius: 15px;
+          border: 4px dotted #D2D5D6;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+            .category {
+              font-size: 14px;
+            }
+
+            .title {
+              font-size: 20px;
+            }
+
+            .description {
+              font-size: 11px;
+            }
+
+            .image {
+              width: 200px;
+            }
+
+            .mood {
+              width: 100px;
+            }
+
+/*USER SHOW PROFILE*/
+
+.big-profile-pic-container {
+  text-align: center;
+}
+
+.big-profile-pic {
+  margin: 0 auto;
+  width: 200px;
+  border-radius: 20px;
+}
+
+#user-informations-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#delete-user-button, .delete-rmb-button {
+  background-color: #8A0E4E;
+  border-radius: 7px;
+  border: none;
+  color: white;
+  margin: 5px 0;
+}
+
+.user-info-link {
+  color: #50C78F;
+}
+
+/* USER EDIT PROFILE */
+
+.edit-user-info-link, .edit-rmb-link {
+  margin: 50px auto;
+  background-color: #B5D9FF;
+  border-radius: 7px;
+  font-size: 12px;
+  padding: 3px 5px;
+  color: black;
+}
+
+/* EDIT REMEMBOX & USER*/
+
+#edit-remembox, #edit-profile{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+#edit-remembox input, #edit-remembox select, #edit-remembox textarea, #edit-profile input {
+  width: 100%;
+  height: 40px;
+  font-size: 15px;
+}
+
+.img-in-edit-rmb {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.edit-rmb-button, .edit-profile-button {
+  margin: 50px 0;
+  background-color: #B5D9FF;
+  border-radius: 7px;
+  border: none;
+}

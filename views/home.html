@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+  <link rel=stylesheet href="/css/style.css">
+  <title>{{ user.fname }} - Home</title>
+</head>
+<body>
+
+  <div class='message-flash'>{{ message }}</div>
+
+  <div class='home-container'>
+
+    <div class='header-container'>
+      <div class='header'>
+        <div class'header-content logo-part'>
+          <a href="/home"><img id='little-logo' src="/images/little-logo.png" alt="remembook"></a>
+        </div>
+        <input id='kw-to-find' class='header-content search-part' placeholder="Search" name="search" type="text"/>
+        <div><input id='date-to-find' class='header-content date-part' placeholder="Date" name="date" type="date"/></div>
+        <button class='button-header' id='find-button'>Find</button>
+        <a class='button-header' href="/home/seeall">See All</a>
+        <div class='header-content user-info-part'><img id='profile-pic' src="{{ user.user_image_url }}"/></div>
+        <div class='header-content user-info-part'><a href="/user">{{ user.fname }}</a></div>
+        <div class='header-content logout-part'><a href="/user/logout">Log Out</a></div>
+      </div>
+    </div>
+
+    <div class='main-content-container'>
+      <div class='main-content'>
+        <div class='body-content'>
+
+          <div class='all-remembox'>
+
+            <form id="new-remembox" method="post">
+              <input placeholder="Date" name="rmbdate" type="date"/ required>
+              <select name="category" size="1" required>
+                <option hidden selected>--Choose a category--</option>
+                <option value='action'>ACTION</option>
+                <option value='event'>EVENT</option>
+                <option value='idea'>IDEA</option>
+                <option value='meeting'>MEETING</option>
+                <option value='thought'>THOUGHT</option>
+              </select>
+              <input placeholder="Title" name="title" type="text"/ required>
+              <textarea placeholder="Description" name="text" rows="5"></textarea>
+              <input placeholder="Image-url" name="image-url" type="text"/>
+              <select name="mood" size="1" required>
+                <option hidden selected>--What's your mood?--</option>
+                <option value='angry'>ANGRY</option>
+                <option value='dreamy'>DREAMY</option>
+                <option value='excited'>EXCITED</option>
+                <option value='happy'>HAPPY</option>
+                <option value='hungry'>HUNGRY</option>
+                <option value='nonchalant'>NONCHALANT</option>
+              </select>
+              <input type="submit" value="Create the Remembox">
+            </form>
+
+            {{ #allRemembox }}
+            <div class='remembox'>
+              <div class='category'>CATEGORY: {{ category }}</div>
+              <div class='title'>{{ title }}</div>
+              <div class='text'>{{ description }}</div>
+              <div><a href="{{ picture }}" target="_blank"><img class='image' src="{{ picture }}" alt=""/></a></div>
+              <div><video class='mood' src="{{ mood_url }}" alt="" autoplay loop playsinline></video></div>
+              <div>
+                <div class='rmb_to_delete_id' data-id='{{ remembox_id }}'></div>
+                <a class="edit-rmb-link" href="/home/{{ remembox_id }}">Edit</a>
+                <button class="delete-rmb-button">Delete</button>
+              </div>
+            </div>
+            {{ /allRemembox }}
+
+            {{ #findByKwDate }}
+            <div class='remembox'>
+              <div class='category'>CATEGORY: {{ category }}</div>
+              <div class='title'>{{ title }}</div>
+              <div class='text'>{{ description }}</div>
+              <div><a href="{{ picture }}" target="_blank"><img class='image' src="{{ picture }}" alt=""/></a></div>
+              <div><video class='mood' src="{{ mood_url }}" alt="" autoplay loop playsinline></video></div>
+              <div>
+                <div class='rmb_to_delete_id' data-id='{{ remembox_id }}'></div>
+                <a class="edit-rmb-link" href="/home/{{ remembox_id }}">Edit</a>
+                <div class="delete-rmb-button">Delete</div>
+              </div>
+            </div>
+            {{ /findByKwDate }}
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+
+</body>
+</html>

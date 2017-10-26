@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+  <link rel=stylesheet href="/css/style.css">
+  <title>Remembox</title>
+</head>
+
+<body>
+
+  <div class='message-flash'>{{ #messageTimeOut }} {{ /messageTimeOut }}</div>
+
+  <div class='index-container'>
+
+    <div class='header-container'>
+      <div class='header'>
+
+        <div class'header-content logo-part'>
+          <img id='logo' src="/images/logo2.png" alt="remembook">
+        </div>
+
+        <div class'header-content login-part'>
+          <form id="login-form" action="/user/login" method="post">
+            <div class=login-form-input-text-part>
+              <div class=login-form-input>
+                <label for="user-login">username:</label><br/>
+                <input placeholder="username" name="user[login]" type="text"/>
+              </div>
+              <div class=login-form-input>
+                <label for="user-password">password:</label><br/>
+                <input placeholder="password" name="user[password]" type="password"/>
+              </div>
+            </div>
+            <div>
+              <label for="submit-button"></label><br/>
+              <input id='login-button' type="submit" value="Login">
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class='main-content-container'>
+      <div class='main-content'>
+
+        <div class='body-content column-left'>
+          <div class="article-container">
+            <div class='article article-title'>{{ article.title }}</div>
+            <div class='article article-desc'>{{ article.description }}</div>
+            <div class='article'><img class='article-pic' src="{{ article.picture}}" alt=""/></div>
+            <div class='article'><a class='article-url' href="{{ article.url }}" target="_blank">See the article</a></div>
+            <div class='article article-date-author'>posted on {{ article.date }}, contributor: {{ article.author}}</div>
+            <div class='article article-magname'>{{ article.magazine_name }}</div>
+            <div class='article'><img class='article-maglogo' src="{{ article.magazine_logo}}" alt=""/></div>
+
+          </div>
+        </div>
+
+        <div class='body-content column-right'>
+          <h1>Create a New Account</h1>
+          <form id="signup-form" action="/user/signup" method="post">
+            <input class='signup-input' placeholder="First Name" name="user[fname]" type="text"/>
+            <input class='signup-input' placeholder="Last Name" name="user[lname]" type="text"/>
+            <input class='signup-input' placeholder="E-mail" name="user[email]" type="text"/>
+            <input class='signup-input' placeholder="username" name="user[login]" type="text"/>
+            <input class='signup-input' placeholder="password" name="user[password]" type="password"/>
+            <input class='signup-input' placeholder="image url" name="user[image]" type="text"/>
+            <input class='signup-input signup-submit-button' type="submit" value="Create account">
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+</body>
+
+</html>

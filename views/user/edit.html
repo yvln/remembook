@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+  <link rel=stylesheet href="/css/style.css">
+  <title>{{ user.fname }} - Edit profile</title>
+</head>
+<body>
+
+  <div class='home-container'>
+
+    <div class='header-container'>
+      <div class='header'>
+        <div class'header-content logo-part'>
+          <a href="/home"><img id='little-logo' src="/images/little-logo.png" alt="remembook"></a>
+        </div>
+        <a href="/home/seeall" class='header-content see-all-part'>See All</a>
+        <div class='header-content user-info-part'><img id='profile-pic' src="{{ user.user_image_url }}"/></div>
+        <div class='header-content user-info-part'><a href="/user">{{ user.fname }}</a></div>
+        <div class='header-content logout-part'><a href="/user/logout" >LOG OUT</a></div>
+      </div>
+    </div>
+
+    <div class='main-content-container'>
+      <div class='main-content'>
+        <div class='body-content'>
+          <form id="edit-profile">
+              <div class='big-profile-pic-container'><img class='big-profile-pic' src="{{ user.user_image_url }}"/></div>
+              <div><input placeholder='{{ user.user_image_url }}' value='{{ user.user_image_url }}' name="image" type="text" required></div>
+              <div>First Name: <input placeholder='{{ user.fname}}' value='{{ user.fname}}' name="fname" type="text" required></div>
+              <div>Last Name: <input placeholder='{{ user.lname}}' value='{{ user.lname}}' name="lname" type="text" required></div>
+              <div>E-mail: <input placeholder='{{ user.email}}' value='{{ user.email}}' name="email" type="text" required></div>
+              <div>Username: <input placeholder='{{ user.login}}' value='{{ user.login}}' name="login" type="text" required></div>
+              <div id="user_id" data-id='{{ user.user_id }}'></div>
+              <input class="edit-profile-button" type="submit" value="Edit profile">
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>
